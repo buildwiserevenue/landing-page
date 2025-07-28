@@ -184,6 +184,71 @@
     line-height: 1.6;
     color: #B0B0B0;
 }
+/* --- Sezione Soluzione --- */
+.solution-section {
+    background-color: #121212; /* Torniamo al nero per staccare dalla sezione precedente */
+    padding: 100px 20px;
+    overflow: hidden; /* Previene problemi con elementi che escono */
+}
+
+.solution-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Due colonne */
+    align-items: center;
+    gap: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.solution-text .intro-p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #A0A0A0;
+    margin-bottom: 40px;
+}
+
+.solution-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.solution-item .icon {
+    font-size: 2rem;
+    color: #00C853;
+    margin-top: 5px;
+}
+
+.solution-item h3 {
+    font-size: 1.5rem;
+    margin: 0 0 10px 0;
+    color: #E0E0E0;
+}
+
+.solution-item p {
+    margin: 0;
+    color: #A0A0A0;
+    line-height: 1.6;
+}
+
+.solution-image img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Adattamento mobile per la sezione Soluzione */
+@media (max-width: 900px) {
+    .solution-content {
+        grid-template-columns: 1fr; /* Una colonna su mobile */
+        gap: 50px;
+    }
+    .solution-image {
+        order: -1; /* Mette l'immagine sopra il testo su mobile */
+    }
+}
     </style>
 </head>
 <body>
@@ -219,6 +284,42 @@
             <div class="icon">孤独</div>
             <h3>Trading All Alone</h3>
             <p>You have no one to share ideas with, ask for feedback, or help you stay disciplined during tough market phases.</p>
+        </div>
+    </div>
+</section>
+<section class="solution-section">
+    <div class="solution-content">
+        <div class="solution-text">
+            <h2 class="section-title">The Answer isn't a Tool. It's an Ecosystem.</h2>
+            <p class="intro-p">Stop chasing quick fixes. Build Wise Revenue provides a complete ecosystem designed to build real, lasting trading skills.</p>
+            
+            <div class="solution-item">
+                <div class="icon">📈</div>
+                <div>
+                    <h3>A Clear Process</h3>
+                    <p>We focus on a structured, repeatable methodology for market analysis and risk management. No more guessing.</p>
+                </div>
+            </div>
+
+            <div class="solution-item">
+                <div class="icon">🤝</div>
+                <div>
+                    <h3>A Real Community</h3>
+                    <p>You're not alone. Join the 'Wolf Pack' to share ideas, get feedback, and stay accountable with like-minded traders.</p>
+                </div>
+            </div>
+
+            <div class="solution-item">
+                <div class="icon">🧠</div>
+                <div>
+                    <h3>Master Your Psychology</h3>
+                    <p>The biggest edge is in your mind. We provide the tools and support to master the discipline essential for success.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="solution-image">
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop" alt="Trading Process Chart">
         </div>
     </div>
 </section>
