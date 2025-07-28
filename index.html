@@ -249,6 +249,182 @@
         order: -1; /* Mette l'immagine sopra il testo su mobile */
     }
 }
+/* --- Sezione Cosa Troverai (Features) --- */
+.features-section {
+    background-color: #1a1a1a;
+    padding: 100px 20px;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.feature-card {
+    background-color: #242424;
+    padding: 35px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #333;
+}
+
+.feature-card .icon {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #00C853;
+}
+
+.feature-card h3 {
+    font-size: 1.5rem;
+    margin: 0 0 15px 0;
+    color: #E0E0E0;
+}
+
+.feature-card p {
+    margin: 0;
+    color: #A0A0A0;
+    line-height: 1.6;
+    flex-grow: 1; /* Fa in modo che le card abbiano la stessa altezza */
+}
+/* --- Sezione CTA/Prezzo --- */
+.join-section {
+    background-color: #121212;
+    padding: 100px 20px;
+    text-align: center;
+}
+
+.pricing-box {
+    max-width: 500px;
+    margin: 50px auto 0 auto;
+    background-color: #242424;
+    border: 2px solid #00C853;
+    border-radius: 16px;
+    padding: 40px;
+    box-shadow: 0 0 40px rgba(0, 200, 83, 0.2);
+}
+
+.pricing-box h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0 0 15px 0;
+    color: #ffffff;
+}
+
+.price {
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: #00C853;
+    margin: 0 0 10px 0;
+}
+
+.price span {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #A0A0A0;
+}
+
+.pricing-features {
+    list-style: none;
+    padding: 0;
+    margin: 30px 0;
+    text-align: left;
+}
+
+.pricing-features li {
+    margin-bottom: 15px;
+    color: #B0B0B0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.pricing-features li::before {
+    content: '✅';
+    color: #00C853;
+}
+
+.final-cta-button {
+    display: block;
+    width: 100%;
+    background-color: #00C853;
+    color: #121212;
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.final-cta-button:hover {
+    background-color: #ffffff;
+    box-shadow: 0 5px 20px rgba(0, 200, 83, 0.4);
+}
+
+.cta-assurance {
+    margin-top: 15px;
+    font-size: 0.9rem;
+    color: #A0A0A0;
+}
+
+/* --- Sezione FAQ --- */
+.faq-section {
+    background-color: #1a1a1a;
+    padding: 100px 20px;
+}
+
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    background-color: #242424;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    border: 1px solid #333;
+}
+
+.faq-item summary {
+    font-size: 1.2rem;
+    font-weight: 700;
+    padding: 20px;
+    cursor: pointer;
+    outline: none;
+    position: relative;
+    color: #E0E0E0;
+}
+
+.faq-item summary::after { /* Icona freccia */
+    content: '▾';
+    position: absolute;
+    right: 20px;
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.faq-item[open] summary::after {
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    padding: 0 20px 20px 20px;
+    color: #B0B0B0;
+    line-height: 1.7;
+}
+
+/* --- Footer --- */
+.footer {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #121212;
+    color: #A0A0A0;
+    font-size: 0.9rem;
+}
     </style>
 </head>
 <body>
@@ -259,7 +435,7 @@
             <p>
                 Join an exclusive community focused on discipline, psychology, and demo-tested strategies—not on unrealistic promises.
             </p>
-            <a href="#URL_WHOP_HERE" class="cta-button">Join the Wolf Pack</a>
+            <a href="#URL_WHOP_HERE" class="cta-button">Join The Wise Wolves</a>
         </div>
     </section>
 <section class="problem-section">
@@ -323,6 +499,91 @@
         </div>
     </div>
 </section>
+<section class="features-section">
+    <h2 class="section-title">What You'll Find Inside the Wolf Pack</h2>
+    <div class="features-grid">
+        <div class="feature-card">
+            <div class="icon">💬</div>
+            <h3>Exclusive Channels</h3>
+            <p>Access channels for technical analysis, trading psychology, and resource sharing, away from the general noise.</p>
+        </div>
+        <div class="feature-card">
+            <div class="icon">📚</div>
+            <h3>In-Depth PDFs & Resources</h3>
+            <p>Get exclusive educational guides, checklists, and tools not available on the public blog to accelerate your learning.</p>
+        </div>
+        <div class="feature-card">
+            <div class="icon">❓</div>
+            <h3>Direct Q&A Sessions</h3>
+            <p>Participate in regular Q&A sessions to get your specific questions answered and overcome your hurdles.</p>
+        </div>
+        <div class="feature-card">
+            <div class="icon">🐺</div>
+            <h3>The 'Wolf Pack' Community</h3>
+            <p>Surround yourself with serious, supportive traders on the same journey. You are not alone anymore.</p>
+        </div>
+        <div class="feature-card">
+            <div class="icon">📓</div>
+            <h3>Trade Journal Reviews</h3>
+            <p>Share your (demo) trade journal for constructive feedback from the community to find your edge faster.</p>
+        </div>
+        <div class="feature-card">
+            <div class="icon">🚀</div>
+            <h3>A Focused Environment</h3>
+            <p>A space designed for serious learning and disciplined execution, free from hype and get-rich-quick schemes.</p>
+        </div>
+    </div>
+</section>
+<section class="join-section">
+    <h2 class="section-title">Ready to Stop Guessing?</h2>
+    <div class="pricing-box">
+        <h3>Join the Wise Wolves</h3>
+        <div class="price">€99<span>/month</span></div>
+        <ul class="pricing-features">
+            <li>Access to the clean #trade-feed</li>
+            <li>In-depth analysis in the #trade-analysis channel</li>
+            <li>Vibrant community in the #wolf-pack-lounge</li>
+            <li>Exclusive PDFs and educational resources</li>
+            <li>A structured path to discipline</li>
+        </ul>
+        <a href="https://whop.com/checkout/plan_8kcCp1whxfhgL/" class="final-cta-button">Start Your Journey Now</a>
+        <p class="cta-assurance">Cancel anytime, no questions asked.</p>
+    </div>
+</section>
+
+<section class="faq-section">
+    <h2 class="section-title">Frequently Asked Questions</h2>
+    <div class="faq-container">
+        <details class="faq-item">
+            <summary>Is this financial advice?</summary>
+            <div class="faq-answer">
+                <p>Absolutely not. All content, including shared trades, is for educational and hypothetical purposes only. We focus on teaching a disciplined process on demo accounts. Trading involves significant risk and is not suitable for everyone.</p>
+            </div>
+        </details>
+        <details class="faq-item">
+            <summary>Do I need experience to join?</summary>
+            <div class="faq-answer">
+                <p>No. The community is designed for both beginners seeking a structured process and intermediate traders looking to improve their discipline and psychology. The focus is on learning a professional approach from the ground up.</p>
+            </div>
+        </details>
+        <details class="faq-item">
+            <summary>What if I can't be active on Discord every day?</summary>
+            <div class="faq-answer">
+                <p>No problem. The most valuable content (the trade analysis and context) is posted in a dedicated, read-only channel, creating a library of case studies you can review anytime at your own pace.</p>
+            </div>
+        </details>
+        <details class="faq-item">
+            <summary>How do I cancel my membership?</summary>
+            <div class="faq-answer">
+                <p>You have full control. You can cancel your subscription at any time directly from your Whop dashboard with a single click, no strings attached.</p>
+            </div>
+        </details>
+    </div>
+</section>
+
+<footer class="footer">
+    <p>&copy; 2025 Build Wise Revenue. All Rights Reserved.</p>
+</footer>
 
 </body>
 </html>
