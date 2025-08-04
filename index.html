@@ -367,7 +367,7 @@
 
     .final-cta-button {
         display: block;
-        width: 100%;
+
         max-width: 350px; /* <--- Aggiunto: Larghezza massima del pulsante */
         margin: 0 auto; /* <--- Aggiunto: Centra orizzontalmente */
         background-color: #00C853;
@@ -390,6 +390,15 @@
         font-size: 0.9rem;
         color: #A0A0A0;
     }
+    /* Adattamento mobile per la sezione CTA/Prezzo */
+    @media (max-width: 600px) {
+    .final-cta-button {
+        max-width: 90%; /* Ad esempio, sul mobile occupa il 90% della larghezza disponibile */
+        /* Puoi anche usare un valore fisso, tipo max-width: 280px; */
+        font-size: 1.3rem; /* Riduci il font su mobile se vuoi */
+        padding: 18px; /* Riduci il padding su mobile se vuoi */
+    }
+
 
     /* --- Sezione FAQ --- */
     .faq-section {
