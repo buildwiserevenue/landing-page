@@ -29,11 +29,11 @@
         margin: 0 !important;
         padding: 0 !important;
         width: 100% !important;
-        height: 100% !important;
         font-family: 'Outfit', sans-serif;
         background-color: #121212;
         color: #E0E0E0;
         overflow-x: hidden; /* Previene lo scroll orizzontale */
+        scroll-behavior: smooth;
     }
 
     /* --- Sezione Hero --- */
@@ -41,22 +41,18 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        height: 100vh;
+        min-height: 100vh;
         width: 100%;
         background-image: linear-gradient(rgba(18, 18, 18, 0.85), rgba(18, 18, 18, 0.95)), url('https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=3600');
         background-size: cover;
         background-position: center;
         background-attachment: fixed;
         text-align: center;
-        padding: 0 20px;
+        padding: 40px 20px;
         box-sizing: border-box;
     }
 
-    .hero-content {
-        max-width: 800px;
-    }
-
-    /* Titolo Principale */
+    .hero-content { max-width: 800px; }
     .hero-content h1 {
         font-size: 4rem;
         font-weight: 900;
@@ -68,8 +64,6 @@
         background-clip: text;
         text-fill-color: transparent;
     }
-
-    /* Sottotitolo */
     .hero-content p {
         font-size: 1.3rem;
         font-weight: 300;
@@ -80,8 +74,6 @@
         margin-left: auto;
         margin-right: auto;
     }
-
-    /* Pulsante Call-to-Action */
     .cta-button {
         display: inline-block;
         background-color: #00C853;
@@ -97,7 +89,6 @@
         transition: all 0.3s ease;
         box-shadow: 0 5px 20px rgba(0, 200, 83, 0.25);
     }
-
     .cta-button:hover {
         background-color: transparent;
         color: #00C853;
@@ -105,209 +96,54 @@
         box-shadow: 0 8px 25px rgba(0, 200, 83, 0.4);
     }
 
-    /* --- Media Queries per Responsive (Mobile) --- */
-    @media (max-width: 768px) {
-        .hero-content h1 {
-            font-size: 3rem;
-        }
-        .hero-content p {
-            font-size: 1.1rem;
-        }
-    }
-
-    @media (max-width: 480px) {
-        .hero-content h1 {
-            font-size: 2.5rem;
-        }
-        .hero-content p {
-            font-size: 1rem;
-        }
-    }
-    /* --- Sezione Problema --- */
-    .problem-section {
-        background-color: #1a1a1a;
-        padding: 80px 20px;
+    /* --- Sezioni Generali --- */
+    .problem-section, .solution-section, .features-section, .join-section, .faq-section {
+        padding: 100px 20px;
         text-align: center;
     }
+    .problem-section, .features-section, .faq-section { background-color: #1a1a1a; }
+    .solution-section, .join-section { background-color: #121212; }
 
-    /* Modificato: Forzare il centramento del titolo */
     .section-title {
         font-size: 2.5rem;
-        font-weight: 900; /* Reso più bold per risaltare */
+        font-weight: 900;
         color: #ffffff;
-        margin-bottom: 50px;
+        margin-bottom: 60px;
         position: relative;
-        display: block; /* Assicura che prenda l'intera larghezza disponibile */
-        text-align: center; /* Centra il testo all'interno del blocco */
-        margin-left: auto; /* Centra il blocco stesso */
-        margin-right: auto; /* Centra il blocco stesso */
-        max-width: 90%; /* Opzionale, per evitare che sia troppo largo su schermi grandi */
+        display: inline-block;
     }
-
-    /* Linea decorativa sotto il titolo */
     .section-title::after {
         content: '';
         position: absolute;
-        width: 60%;
+        width: 80%;
         height: 4px;
         background-color: #00C853;
-        bottom: -10px;
+        bottom: -15px;
         left: 50%;
         transform: translateX(-50%);
         border-radius: 2px;
     }
-
-    .problem-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 30px;
-        max-width: 1200px;
-        margin: 0 auto;
-    }
-
-    .problem-card {
-        background-color: #242424;
-        padding: 30px;
-        border-radius: 12px;
-        border: 1px solid #333;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .problem-card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-    }
-
-    .problem-card .icon {
-        font-size: 3rem;
-        margin-bottom: 20px;
-    }
-
-    .problem-card h3 {
-        font-size: 1.5rem;
-        font-weight: 700;
-        color: #00C853;
-        margin-bottom: 15px;
-    }
-
-    .problem-card p {
-        font-size: 1rem;
-        line-height: 1.6;
-        color: #B0B0B0;
-    }
-    /* --- Sezione Soluzione --- */
-    .solution-section {
-        background-color: #121212;
-        padding: 100px 20px;
-        overflow: hidden;
-    }
-
-    .solution-content {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        align-items: center;
-        gap: 60px;
-        max-width: 1200px;
-        margin: 0 auto;
-    }
-
-    .solution-text .intro-p {
-        font-size: 1.1rem;
-        line-height: 1.7;
-        color: #A0A0A0;
-        margin-bottom: 40px;
-    }
-
-    .solution-item {
-        display: flex;
-        align-items: flex-start;
-        gap: 20px;
-        margin-bottom: 30px;
-    }
-
-    .solution-item .icon {
-        font-size: 2rem;
-        color: #00C853;
-        margin-top: 5px;
-    }
-
-    .solution-item h3 {
-        font-size: 1.5rem;
-        margin: 0 0 10px 0;
-        color: #E0E0E0;
-    }
-
-    .solution-item p {
-        margin: 0;
-        color: #A0A0A0;
-        line-height: 1.6;
-    }
-
-    .solution-image img {
-        width: 100%;
-        max-width: 500px;
-        border-radius: 12px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-    }
-
-    /* Adattamento mobile per la sezione Soluzione */
-    @media (max-width: 900px) {
-        .solution-content {
-            grid-template-columns: 1fr;
-            gap: 50px;
-        }
-        .solution-image {
-            order: -1;
-        }
-    }
-    /* --- Sezione Cosa Troverai (Features) --- */
-    .features-section {
-        background-color: #1a1a1a;
-        padding: 100px 20px;
-    }
-
-    .features-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-        gap: 30px;
-        max-width: 1200px;
-        margin: 0 auto;
-    }
-
-    .feature-card {
-        background-color: #242424;
-        padding: 35px;
-        border-radius: 12px;
-        display: flex;
-        flex-direction: column;
-        border: 1px solid #333;
-    }
-
-    .feature-card .icon {
-        font-size: 2.5rem;
-        margin-bottom: 20px;
-        color: #00C853;
-    }
-
-    .feature-card h3 {
-        font-size: 1.5rem;
-        margin: 0 0 15px 0;
-        color: #E0E0E0;
-    }
-
-    .feature-card p {
-        margin: 0;
-        color: #A0A0A0;
-        line-height: 1.6;
-        flex-grow: 1;
-    }
-    /* --- Sezione CTA/Prezzo --- */
-    .join-section {
-        background-color: #121212;
-        padding: 100px 20px;
-        text-align: center;
-    }
-
+    
+    .problem-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto; }
+    .problem-card { background-color: #242424; padding: 30px; border-radius: 12px; border: 1px solid #333; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+    .problem-card:hover { transform: translateY(-10px); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4); }
+    .problem-card .icon { font-size: 3rem; margin-bottom: 20px; }
+    .problem-card h3 { font-size: 1.5rem; font-weight: 700; color: #00C853; margin-bottom: 15px; }
+    .problem-card p { font-size: 1rem; line-height: 1.6; color: #B0B0B0; }
+    .solution-content { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 60px; max-width: 1200px; margin: 0 auto; text-align: left; }
+    .solution-text .intro-p { font-size: 1.1rem; line-height: 1.7; color: #A0A0A0; margin-bottom: 40px; }
+    .solution-item { display: flex; align-items: flex-start; gap: 20px; margin-bottom: 30px; }
+    .solution-item .icon { font-size: 2rem; color: #00C853; margin-top: 5px; }
+    .solution-item h3 { font-size: 1.5rem; margin: 0 0 10px 0; color: #E0E0E0; }
+    .solution-item p { margin: 0; color: #A0A0A0; line-height: 1.6; }
+    .solution-image img { width: 100%; max-width: 500px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); }
+    .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto; }
+    .feature-card { background-color: #242424; padding: 35px; border-radius: 12px; display: flex; flex-direction: column; border: 1px solid #333; text-align: left;}
+    .feature-card .icon { font-size: 2.5rem; margin-bottom: 20px; color: #00C853; }
+    .feature-card h3 { font-size: 1.5rem; margin: 0 0 15px 0; color: #E0E0E0; }
+    .feature-card p { margin: 0; color: #A0A0A0; line-height: 1.6; flex-grow: 1; }
+    
+    /* --- Stili Sezione Prezzo Aggiornati --- */
     .pricing-box {
         max-width: 500px;
         margin: 50px auto 0 auto;
@@ -317,52 +153,20 @@
         padding: 40px;
         box-shadow: 0 0 40px rgba(0, 200, 83, 0.2);
     }
+    .pricing-box h3 { font-size: 2rem; font-weight: 700; margin: 0 0 15px 0; color: #ffffff; }
+    .price-wrapper { display: flex; justify-content: center; align-items: baseline; gap: 15px; margin: 10px 0; }
+    .original-price { font-size: 2rem; font-weight: 700; color: #666; text-decoration: line-through; }
+    .price { font-size: 3.5rem; font-weight: 900; color: #00C853; }
+    .price span { font-size: 1.2rem; font-weight: 400; color: #A0A0A0; }
+    .pricing-features { list-style: none; padding: 0; margin: 30px 0; text-align: left; }
+    .pricing-features li { margin-bottom: 15px; color: #B0B0B0; display: flex; align-items: center; gap: 10px; }
+    .pricing-features li::before { content: '✅'; color: #00C853; }
 
-    .pricing-box h3 {
-        font-size: 2rem;
-        font-weight: 700;
-        margin: 0 0 15px 0;
-        color: #ffffff;
-    }
-
-    .price {
-        font-size: 3.5rem;
-        font-weight: 900;
-        color: #00C853;
-        margin: 0 0 10px 0;
-    }
-
-    .price span {
-        font-size: 1.2rem;
-        font-weight: 400;
-        color: #A0A0A0;
-    }
-
-    .pricing-features {
-        list-style: none;
-        padding: 0;
-        margin: 30px 0;
-        text-align: left;
-    }
-
-    .pricing-features li {
-        margin-bottom: 15px;
-        color: #B0B0B0;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-    }
-
-    .pricing-features li::before {
-        content: '✅';
-        color: #00C853;
-    }
-
+    /* --- FIX PER IL PULSANTE CENTRATO --- */
     .final-cta-button {
         display: block;
-
-        max-width: 350px; /* <--- Aggiunto: Larghezza massima del pulsante */
-        margin: 0 auto; /* <--- Aggiunto: Centra orizzontalmente */
+        max-width: 350px; /* Larghezza massima per estetica */
+        margin: 0 auto;   /* Centra il pulsante */
         background-color: #00C853;
         color: #121212;
         padding: 20px;
@@ -372,79 +176,43 @@
         text-decoration: none;
         transition: all 0.3s ease;
     }
-
-    .final-cta-button:hover {
-        background-color: #ffffff;
-        box-shadow: 0 5px 20px rgba(0, 200, 83, 0.4);
-    }
-
-    .cta-assurance {
-        margin-top: 15px;
-        font-size: 0.9rem;
-        color: #A0A0A0;
-    }
-    /* Adattamento mobile per la sezione CTA/Prezzo */
-    @media (max-width: 600px) {
-    .final-cta-button {
-        max-width: 90%; /* Ad esempio, sul mobile occupa il 90% della larghezza disponibile */
-        /* Puoi anche usare un valore fisso, tipo max-width: 280px; */
-        font-size: 1.3rem; /* Riduci il font su mobile se vuoi */
-        padding: 18px; /* Riduci il padding su mobile se vuoi */
-    }
-
-    /* --- Sezione FAQ --- */
-    .faq-section {
-        background-color: #1a1a1a;
-        padding: 100px 20px;
-    }
-
-    .faq-container {
-        max-width: 800px;
-        margin: 0 auto;
-    }
-
-    .faq-item {
-        background-color: #242424;
-        margin-bottom: 10px;
+    .final-cta-button:hover { background-color: #ffffff; box-shadow: 0 5px 20px rgba(0, 200, 83, 0.4); }
+    
+    .price-lock-guarantee {
+        margin-top: 25px;
+        padding: 10px;
+        background-color: rgba(0, 200, 83, 0.1);
+        border: 1px solid rgba(0, 200, 83, 0.3);
         border-radius: 8px;
-        border: 1px solid #333;
-    }
-
-    .faq-item summary {
-        font-size: 1.2rem;
+        font-size: 1rem;
         font-weight: 700;
-        padding: 20px;
-        cursor: pointer;
-        outline: none;
-        position: relative;
-        color: #E0E0E0;
+        color: #00C853;
     }
-
-    .faq-item summary::after { /* Icona freccia */
-        content: '▾';
-        position: absolute;
-        right: 20px;
-        font-size: 1.5rem;
-        transition: transform 0.3s ease;
+    .price-lock-clarification {
+        margin-top: 10px;
+        font-size: 0.8rem;
+        color: #888;
+        font-style: italic;
     }
-
-    .faq-item[open] summary::after {
-        transform: rotate(180deg);
-    }
-
-    .faq-answer {
-        padding: 0 20px 20px 20px;
-        color: #B0B0B0;
-        line-height: 1.7;
-    }
-
-    /* --- Footer --- */
-    .footer {
-        text-align: center;
-        padding: 40px 20px;
-        background-color: #121212;
-        color: #A0A0A0;
-        font-size: 0.9rem;
+    
+    .faq-container { max-width: 800px; margin: 0 auto; text-align: left; }
+    .faq-item { background-color: #242424; margin-bottom: 10px; border-radius: 8px; border: 1px solid #333; }
+    .faq-item summary { font-size: 1.2rem; font-weight: 700; padding: 20px; cursor: pointer; outline: none; position: relative; color: #E0E0E0; }
+    .faq-item summary::after { content: '▾'; position: absolute; right: 20px; font-size: 1.5rem; transition: transform 0.3s ease; }
+    .faq-item[open] summary::after { transform: rotate(180deg); }
+    .faq-answer { padding: 0 20px 20px 20px; color: #B0B0B0; line-height: 1.7; }
+    .footer { text-align: center; padding: 40px 20px; background-color: #121212; color: #A0A0A0; font-size: 0.9rem; }
+    
+    /* --- Media Queries --- */
+    @media (max-width: 768px) {
+        .hero-content h1 { font-size: 3rem; }
+        .hero-content p { font-size: 1.1rem; }
+        .section-title { font-size: 2rem; }
+        .solution-content { grid-template-columns: 1fr; gap: 50px; }
+        .solution-image { order: -1; }
+        .price { font-size: 3rem; }
+        .original-price { font-size: 1.8rem; }
+        .final-cta-button { font-size: 1.3rem; }
     }
 </style>
 </head>
@@ -455,113 +223,53 @@
     <section class="hero-section">
         <div class="hero-content">
             <h1>Smetti di Improvvisare. Inizia a Costruire il Tuo Stile di Trading.</h1>
-            <p>
-                Unisciti a una community esclusiva focalizzata su disciplina, psicologia e strategie testate in demo, non su promesse irrealizzabili.
-            </p>
-            <a href="https://whop.com/checkout/plan_KBow84hXULvmL?d2c=true" class="cta-button">Entra nei Wise Wolves</a>
+            <p>Unisciti a una community esclusiva focalizzata su disciplina, psicologia e un processo testato in demo, non su promesse irrealizzabili.</p>
+            <a href="#join-section" class="cta-button">Entra nei Wise Wolves</a>
         </div>
     </section>
+    
     <section class="problem-section">
         <h2 class="section-title">Ti Riconosci in Questo?</h2>
         <div class="problem-grid">
-            <div class="problem-card">
-                <div class="icon">🤯</div>
-                <h3>Sovraccarico di Informazioni</h3>
-                <p>Ti senti perso in un mare di indicatori, strategie e "guru", senza sapere di chi fidarti o da dove cominciare.</p>
-            </div>
-            <div class="problem-card">
-                <div class="icon">😠</div>
-                <h3>Decisioni Emotive</h3>
-                <p>La paura di perdere l'occasione (FOMO) e il "revenge trading" sabotano costantemente i tuoi risultati, trasformando piccole perdite in grandi disastri.</p>
-            </div>
-            <div class="problem-card">
-                <div class="icon">🤔</div>
-                <h3>Mancanza di un Vero Piano</h3>
-                <p>Operi in modo casuale, senza un processo chiaro e ripetibile per entrate, uscite e gestione del rischio.</p>
-            </div>
-            <div class="problem-card">
-                <div class="icon">孤独</div>
-                <h3>Operare Completamente da Soli</h3>
-                <p>Non hai nessuno con cui condividere idee, chiedere un parere o che ti aiuti a rimanere disciplinato durante le fasi di mercato difficili.</p>
-            </div>
+            <div class="problem-card"><div class="icon">🤯</div><h3>Sovraccarico di Informazioni</h3><p>Ti senti perso in un mare di indicatori, strategie e "guru", senza sapere di chi fidarti o da dove cominciare.</p></div>
+            <div class="problem-card"><div class="icon">😠</div><h3>Decisioni Emotive</h3><p>La paura di perdere l'occasione (FOMO) e il "revenge trading" sabotano costantemente i tuoi risultati, trasformando piccole perdite in grandi disastri.</p></div>
+            <div class="problem-card"><div class="icon">🤔</div><h3>Mancanza di un Vero Piano</h3><p>Operi in modo casuale, senza un processo chiaro e ripetibile per entrate, uscite e gestione del rischio.</p></div>
+            <!-- ========= ICONA MODIFICATA ========= -->
+            <div class="problem-card"><div class="icon">👤</div><h3>Operare Completamente da Soli</h3><p>Non hai nessuno con cui condividere idee, chiedere un parere o che ti aiuti a rimanere disciplinato durante le fasi di mercato difficili.</p></div>
         </div>
     </section>
     <section class="solution-section">
         <div class="solution-content">
             <div class="solution-text">
-                <h2 class="section-title">La Risposta non è uno Strumento. È un Ecosistema.</h2>
+                <h2 class="section-title" style="text-align: left;">La Risposta non è uno Strumento. È un Ecosistema.</h2>
                 <p class="intro-p">Smetti di inseguire soluzioni rapide. Build Wise Revenue offre un ecosistema completo, progettato per costruire competenze di trading reali e durature.</p>
-                
-                <div class="solution-item">
-                    <div class="icon">📈</div>
-                    <div>
-                        <h3>Un Processo Chiaro</h3>
-                        <p>Ci concentriamo su una metodologia strutturata e ripetibile per l'analisi di mercato e la gestione del rischio. Mai più decisioni a caso.</p>
-                    </div>
-                </div>
-
-                <div class="solution-item">
-                    <div class="icon">🤝</div>
-                    <div>
-                        <h3>Una Vera Community</h3>
-                        <p>Non sei più solo. Unisciti ai 'Wise Wolves' per condividere idee, ricevere feedback e rimanere disciplinato insieme a trader con la tua stessa mentalità.</p>
-                    </div>
-                </div>
-
-                <div class="solution-item">
-                    <div class="icon">🧠</div>
-                    <div>
-                        <h3>Domina la Tua Psicologia</h3>
-                        <p>Il vantaggio più grande è nella tua mente. Forniamo gli strumenti e il supporto per padroneggiare la disciplina essenziale per il successo.</p>
-                    </div>
-                </div>
+                <div class="solution-item"><div class="icon">📈</div><div><h3>Un Processo Chiaro</h3><p>Ci concentriamo su una metodologia strutturata e ripetibile per l'analisi di mercato e la gestione del rischio. Mai più decisioni a caso.</p></div></div>
+                <div class="solution-item"><div class="icon">🤝</div><div><h3>Una Vera Community</h3><p>Non sei più solo. Unisciti ai 'Wise Wolves' per condividere idee, ricevere feedback e rimanere disciplinato insieme a trader con la tua stessa mentalità.</p></div></div>
+                <div class="solution-item"><div class="icon">🧠</div><div><h3>Domina la Tua Psicologia</h3><p>Il vantaggio più grande è nella tua mente. Forniamo gli strumenti e il supporto per padroneggiare la disciplina essenziale per il successo.</p></div></div>
             </div>
-
-            <div class="solution-image">
-                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop" alt="Grafico Processo di Trading">
-            </div>
+            <div class="solution-image"><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop" alt="Grafico Processo di Trading"></div>
         </div>
     </section>
     <section class="features-section">
         <h2 class="section-title">Cosa Troverai Dentro i Wise Wolves</h2>
         <div class="features-grid">
-            <div class="feature-card">
-                <div class="icon">💬</div>
-                <h3>Canali Esclusivi</h3>
-                <p>Accesso a canali dedicati ad analisi tecnica, psicologia del trading e condivisione di risorse, lontano dal rumore generico.</p>
-            </div>
-            <div class="feature-card">
-                <div class="icon">📚</div>
-                <h3>PDF e Risorse Approfondite</h3>
-                <p>Ottieni guide didattiche, checklist e strumenti esclusivi non disponibili sul blog per accelerare il tuo apprendimento.</p>
-            </div>
-            <div class="feature-card">
-                <div class="icon">❓</div>
-                <h3>Sessioni Q&A Dirette</h3>
-                <p>Partecipa a sessioni di Domande e Risposte periodiche per chiarire i tuoi dubbi specifici e superare i tuoi ostacoli.</p>
-            </div>
-            <div class="feature-card">
-                <div class="icon">🐺</div>
-                <h3>La Community dei 'Wise Wolves'</h3>
-                <p>Circondati di trader seri e motivati che condividono il tuo stesso percorso. Non sei più solo.</p>
-            </div>
-            <div class="feature-card">
-                <div class="icon">📓</div>
-                <h3>Revisione del Journal</h3>
-                <p>Condividi il tuo diario di trading (in demo) per ricevere feedback costruttivi dalla community e trovare il tuo vantaggio più velocemente.</p>
-            </div>
-            <div class="feature-card">
-                <div class="icon">🚀</div>
-                <h3>Un Ambiente Focalizzato</h3>
-                <p>Uno spazio progettato per l'apprendimento serio e l'esecuzione disciplinata, libero da hype e da schemi per arricchirsi rapidamente.</p>
-            </div>
+            <div class="feature-card"><div class="icon">💬</div><h3>Accesso ai Miei Setup Operativi</h3><p>Accesso ai canali dedicati dove condivido i miei setup su Forex, Crypto, Indici e Materie Prime, senza rumore di fondo.</p></div>
+            <div class="feature-card"><div class="icon">📚</div><h3>PDF e Risorse Approfondite</h3><p>Ottieni guide didattiche, checklist e strumenti esclusivi come il "Kit della Corazza Mentale" per accelerare il tuo apprendimento.</p></div>
+            <div class="feature-card"><div class="icon">❓</div><h3>Analisi di Contesto dei Trade</h3><p>Nel canale #trade-analysis, spiego il "perché" dietro ogni operazione: il piano di rischio, l'approccio psicologico e il framework di esecuzione.</p></div>
+            <div class="feature-card"><div class="icon">🐺</div><h3>La Community dei 'Wise Wolves'</h3><p>Circondati di trader seri e motivati che condividono il tuo stesso percorso. Non sei più solo.</p></div>
+            <div class="feature-card"><div class="icon">📓</div><h3>Revisione del Journal</h3><p>Condividi il tuo diario di trading (in demo) per ricevere feedback costruttivi dalla community e trovare il tuo vantaggio più velocemente.</p></div>
+            <div class="feature-card"><div class="icon">🚀</div><h3>Un Ambiente Focalizzato</h3><p>Uno spazio progettato per l'apprendimento serio e l'esecuzione disciplinata, libero da hype e da schemi per arricchirsi rapidamente.</p></div>
         </div>
     </section>
-    <section class="join-section">
+
+    <section class="join-section" id="join-section">
         <h2 class="section-title">Pronto a Smettere di Improvvisare?</h2>
         <div class="pricing-box">
             <h3>Entra nei Wise Wolves</h3>
-            <div class="price">€99<span>/mese</span></div>
+            <div class="price-wrapper">
+                <div class="original-price">€249</div>
+                <div class="price">€99<span>/mese</span></div>
+            </div>
             <ul class="pricing-features">
                 <li>Accesso ai canali con i miei setup operativi</li>
                 <li>Analisi di contesto nel canale #trade-analysis</li>
@@ -570,48 +278,43 @@
                 <li>Un percorso strutturato verso la disciplina</li>
             </ul>
             <a href="https://whop.com/checkout/plan_KBow84hXULvmL?d2c=true" class="final-cta-button">Inizia Ora il Tuo Percorso</a>
-            <p class="cta-assurance">Cancellazione immediata, nessun vincolo.</p>
+            <div class="price-lock-guarantee">
+                🔥 Offerta Fondatori: Blocca questo prezzo per sempre!
+            </div>
+            <p class="price-lock-clarification">
+                Se annulli l'iscrizione e il prezzo dovesse aumentare in futuro, al tuo ritorno si applicherà la nuova tariffa.
+            </p>
         </div>
     </section>
 
     <section class="faq-section">
         <h2 class="section-title">Le Tue Domande, le Nostre Risposte</h2>
         <div class="faq-container">
+            <details class="faq-item"><summary>Su quale stile di trading vi concentrate?</summary><div class="faq-answer"><p>Ci concentriamo principalmente sullo Swing Trading utilizzando timeframe superiori come il grafico Giornaliero e a 4 Ore. Questo approccio si basa sull'identificare setup di qualità e avere la pazienza di lasciarli sviluppare, rendendolo adatto anche a chi non può guardare i grafici tutto il giorno.</p></div></details>
+            <details class="faq-item"><summary>Qual è l'obiettivo principale della community?</summary><div class="faq-answer"><p>L'obiettivo principale è abbandonare il trading casuale e costruire un approccio disciplinato e basato su un processo. Raggiungiamo questo scopo attraverso l'analisi dei trade, un focus sulla psicologia e un ambiente di supporto dove impariamo e cresciamo insieme.</p></div></details>
+            
+            <!-- ========= FAQ MODIFICATA E CORRETTA ========= -->
             <details class="faq-item">
-                <summary>Su quale stile di trading vi concentrate?</summary>
+                <summary>È una sala segnali?</summary>
                 <div class="faq-answer">
-                    <p>Ci concentriamo principalmente sullo Swing Trading utilizzando timeframe superiori come il grafico Giornaliero e a 4 Ore. Questo approccio si basa sull'identificare setup di qualità e avere la pazienza di lasciarli sviluppare, rendendolo adatto anche a chi non può guardare i grafici tutto il giorno.</p>
+                    <p>No, è molto di più. Questa è una community professionale ed educativa dove condivido le mie operazioni in tempo reale su conto demo come casi studio ipotetici.</p>
+                    <p>Il nostro obiettivo è farti sviluppare un approccio consapevole al mercato. I livelli e i setup che condivido sono uno strumento potente che puoi usare come preferisci: come riferimento per la tua analisi, come conferma per le tue strategie, o per costruire il tuo "edge" personale, esattamente come spiego nella guida "Come Usare i Miei Livelli" che riceverai all'iscrizione.</p>
                 </div>
             </details>
-            <details class="faq-item">
-                <summary>Qual è l'obiettivo principale della community?</summary>
-                <div class="faq-answer">
-                    <p>L'obiettivo principale è abbandonare il trading casuale e costruire un approccio disciplinato e basato su un processo. Raggiungiamo questo scopo attraverso l'analisi dei trade, un focus sulla psicologia e un ambiente di supporto dove impariamo e cresciamo insieme.</p>
-                </div>
-            </details>
-            <details class="faq-item">
-                <summary>È consulenza finanziaria?</summary>
-                <div class="faq-answer">
-                    <p>Assolutamente no. Questa è una community professionale ed educativa. Tutte le operazioni e i livelli sono condivisi su un conto demo a scopo ipotetico e di apprendimento. L'obiettivo è farti imparare un processo, non farti copiare operazioni ciecamente.</p>
-                </div>
-            </details>
-            <details class="faq-item">
-                <summary>Come posso cancellare l'abbonamento?</summary>
-                <div class="faq-answer">
-                    <p>Puoi cancellare la tua sottoscrizione in qualsiasi momento direttamente dalla tua bacheca di Whop. Nota bene che non offriamo rimborsi per i periodi di abbonamento. Una volta cancellato, manterrai il pieno accesso fino alla fine del tuo attuale ciclo di fatturazione.</p>
-                </div>
-            </details>
+            <!-- ========= FINE FAQ MODIFICATA ========= -->
+
+            <details class="faq-item"><summary>Come posso cancellare l'abbonamento?</summary><div class="faq-answer"><p>Puoi cancellare la tua sottoscrizione in qualsiasi momento direttamente dalla tua bacheca di Whop. Nota bene che non offriamo rimborsi per i periodi di abbonamento. Una volta cancellato, manterrai il pieno accesso fino alla fine del tuo attuale ciclo di fatturazione.</p></div></details>
         </div>
     </section>
 
     <footer class="footer">
         <p>&copy; 2025 Build Wise Revenue. Tutti i diritti riservati.</p>
-    <p style="margin-top: 10px;"> <a href="https://buildwiserevenue.top/legal/terms-of-service-it.html" style="color: #A0A0A0; text-decoration: underline;">Terms of Service</a> |
+        <p style="margin-top: 10px;"> <a href="https://buildwiserevenue.top/legal/terms-of-service-it.html" style="color: #A0A0A0; text-decoration: underline;">Terms of Service</a> |
         <a href="https://buildwiserevenue.top/legal/privacy-policy-it.html" style="color: #A0A0A0; text-decoration: underline;">Privacy Policy</a> |
         <a href="https://buildwiserevenue.top/legal/cookie-policy-it.html" style="color: #A0A0A0; text-decoration: underline;">Cookie Policy</a> |
         <a href="https://buildwiserevenue.top/legal/return-policy-it.html" style="color: #A0A0A0; text-decoration: underline;">Return Policy</a> |
         <a href="https://buildwiserevenue.top/legal/full-risk-disclosure-it.html" style="color: #A0A0A0; text-decoration: underline;">Full Risk Disclosure</a>
-    </p>
-</footer>
+        </p>
+    </footer>
 </body>
 </html>
